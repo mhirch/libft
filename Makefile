@@ -1,0 +1,34 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mhirch <mhirch@student.42.fr>              +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/10/07 21:59:50 by mhirch            #+#    #+#              #
+#    Updated: 2022/10/07 21:59:50 by mhirch           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+
+NAME = libft.a
+
+CFLAGS = -Wall -Wextra -Werror
+
+HEADER = libft.h 
+
+FILES = ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
+	ft_strchr.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strncmp.c \
+	ft_strrchr.c ft_tolower.c ft_toupper.c ft_memset.c ft_bzero.c \
+	ft_memcpy.c ft_memchr.c ft_memcmp.c ft_strnstr.c ft_atoi.c \
+	ft_calloc.c ft_strdup.c ft_memmove.c
+OBJ = $(FILES:.c=.o)
+
+all: $(NAME)
+$(NAME): $(HEADER) $(OBJ)
+		ar src $(NAME) $(OBJ)
+clean: 
+	rm -rf $(OBJ)
+fclean: clean
+	rm -rf $(NAME)
+re: fclean all
