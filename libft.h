@@ -1,13 +1,14 @@
 #ifndef LIBFT_H
 #define LIBFT_H
 
-#include<unistd.h>
+#include <unistd.h>
+#include <stdlib.h>
 int ft_isalpha(int m);
 int ft_toupper(int m);
 int ft_tolower(int m);
 char	 *ft_strchr(char *str, int to_find);
 char	 *ft_strrchr(char *str, int to_find);
-int    ft_strlen(char *str);
+size_t  ft_strlen(const char *s);
 int ft_strncmp(const char *str1, const char *str2, size_t l);
 int  ft_isdigit(int m);
 int  ft_isalnum(int m);
@@ -26,5 +27,6 @@ void *ft_calloc(size_t nmemb, size_t size);
 char *ft_strdup(const char *s);
 void *ft_memmove(void *dst, const void *src, size_t len);
 char *ft_substr(char const *s, unsigned int start,size_t len);
+char *ft_strjoin(char const *s1, char const *s2);
 
 #endif
