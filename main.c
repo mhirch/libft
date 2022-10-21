@@ -4,7 +4,7 @@
 #include "libft.h"
 
 int main () {
-   printf("%s\n", ft_substr("tripouille", 1, 1));
+   printf("%s\n", ft_strtrim("   xxx   xxx", " x"));
 
    return(0);
 }
