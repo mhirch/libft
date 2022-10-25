@@ -4,7 +4,12 @@
 #include "libft.h"
 
 int main () {
-   printf("%s\n", ft_strtrim("   xxx   xxx", " x"));
+   char **t;
+   t = ft_split(",,hello,hi,,,dear,,", ',');
+   int i;
+   i = 0;
+   while(t[i] != NULL)
+      printf("%s\n", t[i++]);
 
    return(0);
 }
