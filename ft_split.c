@@ -6,7 +6,7 @@
 /*   By: mhirch <mhirch@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 21:12:25 by mhirch            #+#    #+#             */
-/*   Updated: 2022/10/29 17:20:45 by mhirch           ###   ########.fr       */
+/*   Updated: 2022/10/29 18:32:41 by mhirch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,10 @@ char **ft_split(char const *s, char c)
     if (!tab)
         return NULL;
     j = 0;
+    while(c == '\0' && s[i] == '\0')
+    {
+      tab[j]
+    }
     while (i <= ft_strlen(s))
 	  {
 		  while (s[i] && s[i] == c)
@@ -61,7 +65,7 @@ char **ft_split(char const *s, char c)
 			  i++;
 		  if (index < i )
 		  {
-			  tab[j] = ft_substr(s, index, i - index);
+			  tab[j] = ft_substr(&s[index], 0, i - index);
 			  if (!tab[j])
 				{
 					while (j >= 0)
@@ -76,6 +80,6 @@ char **ft_split(char const *s, char c)
 		}
 		i++;
 	 }
-	tab[j] = 0;
+	tab[j] = NULL;
     return tab;
 }
