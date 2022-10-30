@@ -1,6 +1,13 @@
 #ifndef LIBFT_H
 #define LIBFT_H
 
+typedef struct s_variables
+{
+	int		l;
+	int		i;
+	int		j;
+	int		cl;
+}			t_variables;
 #include <unistd.h>
 #include <stdlib.h>
 int ft_isalpha(int m);

@@ -6,7 +6,7 @@
 /*   By: mhirch <mhirch@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 21:12:25 by mhirch            #+#    #+#             */
-/*   Updated: 2022/10/29 18:32:41 by mhirch           ###   ########.fr       */
+/*   Updated: 2022/10/30 15:25:50 by mhirch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,22 +19,20 @@ int count_str(const char *str, char c)
 {
   int i;
   int z;
-  
+  if (str == NULL)
+  return (0);
   i = 0;
   z = 0;
+  if (str[i] != c )
+    z++;
   while(str[i])
   {
-    if(str[i] == c && str[i + 1] != c)
+    if(str[i] == c && str[i + 1] != c && str[i + 1] != '\0' )
       z++;
     i++;
   }
   i = 0;
-  if(str[i] == c )
-    z--;
-  i = ft_strlen(str) - 1;
-  if(str[i] == c)
-    z--;
-  return z + 1;
+  return z ;
 }
 
 char **ft_split(char const *s, char c)
@@ -52,11 +50,7 @@ char **ft_split(char const *s, char c)
     if (!tab)
         return NULL;
     j = 0;
-    while(c == '\0' && s[i] == '\0')
-    {
-      tab[j]
-    }
-    while (i <= ft_strlen(s))
+    while (i <= ft_strlen(s) )
 	  {
 		  while (s[i] && s[i] == c)
 			  i++;
@@ -66,6 +60,7 @@ char **ft_split(char const *s, char c)
 		  if (index < i )
 		  {
 			  tab[j] = ft_substr(&s[index], 0, i - index);
+        
 			  if (!tab[j])
 				{
 					while (j >= 0)
