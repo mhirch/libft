@@ -6,7 +6,7 @@
 /*   By: mhirch <mhirch@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 21:12:25 by mhirch            #+#    #+#             */
-/*   Updated: 2022/10/30 15:25:50 by mhirch           ###   ########.fr       */
+/*   Updated: 2022/10/30 15:52:43 by mhirch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,16 @@ int count_str(const char *str, char c)
   return z ;
 }
 
+void f_free(char **tab , int j)
+{
+  while (j >= 0)
+					{
+					  free(tab[j]);
+						j--;
+					}
+					free(tab);
+}
+
 char **ft_split(char const *s, char c)
 {
     size_t i;
@@ -43,13 +53,12 @@ char **ft_split(char const *s, char c)
     size_t index;
     
     i = 0;
-    j = count_str(s, c);
+    j = 0;
     if(!s)
         return NULL;
-    tab = malloc(sizeof(char *) * j + 1);
+    tab = malloc(sizeof(char *) * count_str(s, c) + 1);
     if (!tab)
         return NULL;
-    j = 0;
     while (i <= ft_strlen(s) )
 	  {
 		  while (s[i] && s[i] == c)
@@ -60,21 +69,12 @@ char **ft_split(char const *s, char c)
 		  if (index < i )
 		  {
 			  tab[j] = ft_substr(&s[index], 0, i - index);
-        
 			  if (!tab[j])
-				{
-					while (j >= 0)
-					{
-					  free(tab[j]);
-						j--;
-					}
-					free(tab);
-					return (0);
-				}
+					f_free(tab, j);
 			  j++;
-		}
+		  }
 		i++;
 	 }
 	tab[j] = NULL;
-    return tab;
+  return tab;
 }
