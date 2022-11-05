@@ -18,13 +18,16 @@ char	 *ft_strchr(char *str, int to_find)
 	int	i;
 
 	i = 0;
-	if (to_find == '\0')
-		return (0);
+	if (!to_find)
+		return (str + ft_strlen(str));
+	if (to_find > 255)
+		return(str);
 	while (str[i] != '\0')
 	{
 		if (str[i] == to_find)
 				return (&str[i]);
 		i++;
 	}
+
 	return (0);
 }

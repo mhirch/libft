@@ -20,7 +20,7 @@ int ft_strncmp(const char *str1, const char *str2, size_t l);
 int  ft_isdigit(int m);
 int  ft_isalnum(int m);
 int  ft_isascii(int m);
-
+int  ft_isprint(int m);
 size_t ft_strlcpy(char *dest, const char *src, size_t l);
 size_t ft_strlcat(char *dest, const char *src, size_t l);
 void *ft_memset(void *s, int c, size_t n);
