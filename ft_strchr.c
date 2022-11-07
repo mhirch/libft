@@ -20,12 +20,10 @@ char	 *ft_strchr(char *str, int to_find)
 	i = 0;
 	if (!to_find)
 		return (str + ft_strlen(str));
-	if (to_find > 255)
-		return(str);
 	while (str[i] != '\0')
 	{
-		if (str[i] == to_find)
-				return (&str[i]);
+		if (str[i] == (char)to_find)
+				return ((char *)&str[i]);
 		i++;
 	}
 

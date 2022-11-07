@@ -6,7 +6,7 @@
 /*   By: mhirch <mhirch@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 21:12:25 by mhirch            #+#    #+#             */
-/*   Updated: 2022/10/30 15:52:43 by mhirch           ###   ########.fr       */
+/*   Updated: 2022/11/07 23:50:33 by mhirch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ char **ft_split(char const *s, char c)
     j = 0;
     if(!s)
         return NULL;
-    tab = malloc(sizeof(char *) * count_str(s, c) + 1);
+    tab = malloc(sizeof(char *) * (count_str(s, c) + 1));
     if (!tab)
         return NULL;
     while (i <= ft_strlen(s) )

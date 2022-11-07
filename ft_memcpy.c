@@ -6,7 +6,7 @@
 /*   By: mhirch <mhirch@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 14:39:23 by mhirch            #+#    #+#             */
-/*   Updated: 2022/10/09 15:35:58 by mhirch           ###   ########.fr       */
+/*   Updated: 2022/11/05 21:09:17 by mhirch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ void    *ft_memcpy(void *dst, const void *src, size_t n)
 
     pd = (char *)dst;
     ps = (char *)src;
-    // i = 0;
+    if(!dst && !src)
+        return NULL;
     while(n--)
     {
         *pd++ = *ps++;

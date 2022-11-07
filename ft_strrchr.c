@@ -7,16 +7,12 @@ char	 *ft_strrchr(char *str, int to_find)
 	i = ft_strlen(str);
 	if (!to_find)
 		return (str + ft_strlen(str));
-	if (to_find > 255)
-		return(str);
 	if(str[0] == '\0')
 		return NULL;
 	while (i--)
 	{
-		while ( str[i] == to_find)
-        {
-				return (&str[i]);
-        }
+		while ( str[i] == (char)to_find)
+				return ((char *)&str[i]);
 	}
 	return (0);
 }

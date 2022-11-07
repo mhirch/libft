@@ -6,7 +6,7 @@
 /*   By: mhirch <mhirch@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 20:08:26 by mhirch            #+#    #+#             */
-/*   Updated: 2022/10/20 23:02:47 by mhirch           ###   ########.fr       */
+/*   Updated: 2022/11/05 21:18:06 by mhirch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,9 @@ char *ft_strtrim(char const *s1, char const *set)
     j = 0;
 
     i = 0;
-    z = ft_strlen(s1)- 1;
     if(!s1)
         return NULL;
-    
+    z = ft_strlen(s1)- 1;
     while(s1[i] && ft_strchr((char *)set, s1[i]))
         i++;
     while(s1[i] && ft_strchr((char *)set, s1[z]) && z >= 0)
