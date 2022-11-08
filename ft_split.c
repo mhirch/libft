@@ -6,7 +6,7 @@
 /*   By: mhirch <mhirch@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 21:12:25 by mhirch            #+#    #+#             */
-/*   Updated: 2022/11/07 23:50:33 by mhirch           ###   ########.fr       */
+/*   Updated: 2022/11/08 21:44:45 by mhirch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,28 +44,29 @@ void f_free(char **tab , int j)
 					}
 					free(tab);
 }
-
+void  skip(char const*s,int*i, int *index, char c)
+{
+      while (s[*i] && s[*i] == c)
+			  (*i)++;
+		  *index = *i;
+		  while (s[*i] && s[*i] != c)
+			  (*i)++;
+}
 char **ft_split(char const *s, char c)
 {
-    size_t i;
+    int i;
     int j;
     char **tab;
-    size_t index;
+    int index;
     
     i = 0;
     j = 0;
-    if(!s)
-        return NULL;
     tab = malloc(sizeof(char *) * (count_str(s, c) + 1));
-    if (!tab)
+    if (!tab || !s)
         return NULL;
-    while (i <= ft_strlen(s) )
+    while (i <= (int)ft_strlen(s) )
 	  {
-		  while (s[i] && s[i] == c)
-			  i++;
-		  index = i;
-		  while (s[i] && s[i] != c)
-			  i++;
+		  skip(s, &i ,&index, c);
 		  if (index < i )
 		  {
 			  tab[j] = ft_substr(&s[index], 0, i - index);
