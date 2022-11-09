@@ -6,7 +6,7 @@
 /*   By: mhirch <mhirch@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 15:01:51 by mhirch            #+#    #+#             */
-/*   Updated: 2022/11/02 16:46:36 by mhirch           ###   ########.fr       */
+/*   Updated: 2022/11/08 22:59:25 by mhirch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ void	ft_putstr_fd(char *s, int fd)
 	int	i;
 
 	i = 0;
-    if(!s)
-        return;
+	if (!s)
+		return ;
 	while (s[i])
 	{
-		write(fd, &s[i], 1);
+		write (fd, &s[i], 1);
 		i++;
 	}
 }

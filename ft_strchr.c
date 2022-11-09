@@ -10,10 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
 
-char	 *ft_strchr(char *str, int to_find)
+char	*ft_strchr(char *str, int to_find)
 {
 	int	i;
 
@@ -23,9 +22,8 @@ char	 *ft_strchr(char *str, int to_find)
 	while (str[i] != '\0')
 	{
 		if (str[i] == (char)to_find)
-				return ((char *)&str[i]);
+			return ((char *)&str[i]);
 		i++;
 	}
-
 	return (0);
 }

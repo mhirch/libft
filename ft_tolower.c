@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
-int ft_tolower(int m)
+int	ft_tolower(int m)
 {
-    if (m >= 65 && m <= 90)
-        m += 32;
-    return(m);
+	if (m >= 65 && m <= 90)
+		m += 32;
+	return (m);
 }
