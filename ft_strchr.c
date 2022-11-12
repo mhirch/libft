@@ -25,5 +25,7 @@ char	*ft_strchr(char *str, int to_find)
 			return ((char *)&str[i]);
 		i++;
 	}
-	return (0);
+	if (str[i] == (char)to_find)
+		return ((char *)&str[i]);
+	return (NULL);
 }

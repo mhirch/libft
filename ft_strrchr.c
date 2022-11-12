@@ -14,9 +14,9 @@
 
 char	*ft_strrchr(char *str, int to_find)
 {
-	int	i;
+	size_t	i;
 
-	i = ft_strlen(str);
+	i = ft_strlen(str) + 1;
 	if (!to_find)
 		return (str + ft_strlen(str));
 	if (str[0] == '\0')
@@ -26,5 +26,5 @@ char	*ft_strrchr(char *str, int to_find)
 		while (str[i] == (char)to_find)
 			return ((char *)&str[i]);
 	}
-	return (0);
+	return (NULL);
 }

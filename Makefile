@@ -16,6 +16,8 @@ NAME = libft.a
 CFLAGS = -Wall -Wextra -Werror
 
 HEADER = libft.h 
+CC = cc 
+
 
 FILES = ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
 	ft_strchr.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strncmp.c \
@@ -29,9 +31,14 @@ OBJ = $(FILES:.c=.o)
 
 all: $(NAME)
 $(NAME): $(HEADER) $(OBJ)
-		ar rc $(NAME) $(OBJ)
+		ar rcs $(NAME) $(OBJ)
+
+%.o: %.c libft.h
+	$(CC) ${CFLAGS} $< -o $@ -c 
 clean: 
 	rm -rf $(OBJ)
 fclean: clean
 	rm -rf $(NAME)
 re: fclean all
+
+.PHONY: clean fclean re all

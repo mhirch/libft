@@ -6,7 +6,7 @@
 /*   By: mhirch <mhirch@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 23:47:25 by mhirch            #+#    #+#             */
-/*   Updated: 2022/11/08 23:48:16 by mhirch           ###   ########.fr       */
+/*   Updated: 2022/11/10 17:44:23 by mhirch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if (!s)
 		return (NULL);
+	if (len > ft_strlen(s))
+		len = ft_strlen(s);
 	substring = malloc(sizeof(char) * len + 1);
 	if (!substring)
 		return (NULL);
