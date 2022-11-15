@@ -6,13 +6,13 @@
 /*   By: mhirch <mhirch@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 23:08:06 by mhirch            #+#    #+#             */
-/*   Updated: 2022/11/08 23:15:27 by mhirch           ###   ########.fr       */
+/*   Updated: 2022/11/13 16:19:33 by mhirch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_str(const char *str, char c)
+static	int	count_str(const char *str, char c)
 {
 	int	i;
 	int	z;
@@ -33,7 +33,7 @@ int	count_str(const char *str, char c)
 	return (z);
 }
 
-void	f_free(char **tab, int j)
+static	void	f_free(char **tab, int j)
 {
 	while (j >= 0)
 	{
@@ -43,7 +43,7 @@ void	f_free(char **tab, int j)
 	free(tab);
 }
 
-void	skip(char const *s, int *i, int *index, char c)
+static	void	skip(char const *s, int *i, int *index, char c)
 {
 	while (s[*i] && s[*i] == c)
 		(*i)++;

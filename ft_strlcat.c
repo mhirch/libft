@@ -17,6 +17,8 @@ size_t	ft_strlcat(char *dest, const char *src, size_t l)
 	size_t	r;
 	size_t	i;
 
+	if (!dest && l == 0)
+		return (ft_strlen(src));
 	r = ft_strlen(dest);
 	i = 0;
 	if (l <= r)

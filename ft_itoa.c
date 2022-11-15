@@ -6,13 +6,13 @@
 /*   By: mhirch <mhirch@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 18:36:11 by mhirch            #+#    #+#             */
-/*   Updated: 2022/11/08 22:26:28 by mhirch           ###   ########.fr       */
+/*   Updated: 2022/11/13 16:10:19 by mhirch           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_nb(long nb)
+static	int	count_nb(long nb)
 {
 	int	i;
 
@@ -34,7 +34,7 @@ int	count_nb(long nb)
 	return (i);
 }
 
-char	*cpy_to_string(char *nb, long nb2, int j)
+static	char	*cpy_to_string(char *nb, long nb2, int j)
 {
 	while (j-- >= 0)
 	{
